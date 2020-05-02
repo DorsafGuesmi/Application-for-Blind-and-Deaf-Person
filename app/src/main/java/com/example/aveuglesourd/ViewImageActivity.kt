@@ -11,9 +11,9 @@ import com.google.firebase.database.*
 import java.util.*
 
 class ViewImageActivity : AppCompatActivity() {
-    private var mRecyclerView: RecyclerView? = null
+    private lateinit var mRecyclerView: RecyclerView
     private var mAdapter: ImageAdapter? = null
-    private var progressBar: ProgressBar? = null
+    private lateinit var progressBar: ProgressBar
     private var mDatabaseRef: DatabaseReference? = null
     private var mUploads: MutableList<Upload>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class ViewImageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_image)
         mRecyclerView = findViewById(R.id.recycler_view)
         mRecyclerView.setHasFixedSize(true)
-        mRecyclerView.setLayoutManager(LinearLayoutManager(this))
+        mRecyclerView.layoutManager = LinearLayoutManager(this)
         progressBar = findViewById(R.id.progress_circular)
         mUploads = ArrayList()
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads")
@@ -29,9 +29,9 @@ class ViewImageActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (postSnapshot in dataSnapshot.children) {
                     val upload = postSnapshot.getValue(Upload::class.java)!!
-                    mUploads.add(upload)
+                    (mUploads as ArrayList<Upload>).add(upload)
                 }
-                mAdapter = ImageAdapter(this@ViewImageActivity, mUploads)
+                mAdapter = ImageAdapter(this@ViewImageActivity, mUploads as ArrayList<Upload>)
                 mRecyclerView.setAdapter(mAdapter)
                 progressBar.setVisibility(View.INVISIBLE)
             }
