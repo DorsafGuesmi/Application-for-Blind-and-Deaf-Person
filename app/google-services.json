@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "821470406527",
+    "firebase_url": "https://aveuglesourd-c327c.firebaseio.com",
+    "project_id": "aveuglesourd-c327c",
+    "storage_bucket": "aveuglesourd-c327c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821470406527:android:f2b9655ad7ca00b6bddc4a",
+        "android_client_info": {
+          "package_name": "com.example.aveuglesourd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821470406527-hltg8f21qcfr5vd70cus45gi7uuurmp6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aveuglesourd",
+            "certificate_hash": "62703d2398913090575584c200fdb3ce596462c9"
+          }
+        },
+        {
+          "client_id": "821470406527-fn5pi9me80cb2mg00g00l1vl1b2tdm9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoZ0fqjoNTW4f2OpVpf3yV_7LTv110De4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821470406527-fn5pi9me80cb2mg00g00l1vl1b2tdm9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

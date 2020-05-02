@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard"
+    android:background="@drawable/edf">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textColor="#008080"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/user"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignParentRight="true"
+           android:background="@drawable/user" />
+
+
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="193dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/geste"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="ajout"
+
+                android:background="@drawable/deaffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="Gestes"
+                android:textColor="#0000FF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/chat"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:background="@drawable/message" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="Chat"
+                android:textColor="#0000FF"
+                android:textSize="18sp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/notif"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:background="@drawable/hhjjk" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="Rappeler-moi"
+                android:textColor="#0000FF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/enregistrement"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:background="@drawable/record"
+                android:onClick="voix"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="Enregistrer"
+                android:textColor="#0000FF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+
+
+
+    </GridLayout>
+
+</LinearLayout>
+
+</ScrollView>
