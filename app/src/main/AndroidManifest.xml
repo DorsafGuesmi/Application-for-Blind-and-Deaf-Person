@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,27 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ViewImageActivity"></activity>
-        <activity android:name=".Mainact" />
+        <activity android:name=".Aveugle.DashboardAveugle"></activity>
+        <activity android:name=".Aveugle.GalleryActivity" />
+        <activity android:name=".Aveugle.LabelActivity" />
+        <activity android:name=".Aveugle.RappelActivity" />
+        <activity android:name=".Aveugle.DocumentActivity" />
+        <activity android:name=".ViewImageActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".upload_image" />
-        <activity android:name=".uppload" />
-        <activity android:name=".uploadimage" />
         <activity android:name=".creercompte" />
         <activity android:name=".SpeechtoText" />
-        <activity android:name=".dashbordaveugle" />
-        <activity android:name=".geste" />
-        <activity android:name=".notification" />
         <activity android:name=".gerer_compte" />
-        <activity android:name=".authentification_aveugle" />
         <activity android:name=".authentification_sourd" />
-        <activity android:name=".splashaveugle" />
+        <activity android:name=".Aveugle.splashaveugle" />
         <activity android:name=".splashsourd" />
         <activity android:name=".MainActivity" />
-
-        <meta-data
-            android:name="com.google.firebase.ml.vision.DEPRNDENCIES"
-            android:value="face" />
 
         <activity
             android:name=".splashapplication"
@@ -45,6 +39,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".Aveugle.AlarmReceiver" />
+
+        <service
+            android:name=".Aveugle.RingtoneService"
+            android:enabled="true" />
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="ocr, label" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>
