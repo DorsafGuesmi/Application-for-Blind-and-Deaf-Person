@@ -106,45 +106,41 @@ class creercompte : AppCompatActivity() {
             editText.requestFocus()
             return
         }
+
         if (editText2.text.toString().isEmpty()) {
             editText2.error = "entrez votre adresse email s'il vous plait"
             editText2.requestFocus()
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(editText2.toString()).matches()) {
-            editText2.error = "entrez une adresse email valid"
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(editText2.text.toString()).matches()) {
+            editText2.error = "Please enter valid email"
             editText2.requestFocus()
             return
         }
+
         if (editText3.text.toString().isEmpty()) {
             editText3.error = "entrez votre mot de passe s'il vous plait"
             editText3.requestFocus()
             return
         }
+
         auth.createUserWithEmailAndPassword(editText2.text.toString(), editText3.text.toString())
             .addOnCompleteListener(this) { task ->
-
                 if (task.isSuccessful) {
                     val user = auth.currentUser
+
                     user?.sendEmailVerification()
                         ?.addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-
-                                startActivity(Intent(this, authentification_sourd::class.java))
+                                startActivity(Intent(this, authentification_sourd :: class.java))
                                 finish()
                             }
                         }
-
                 } else {
-
-                    Toast.makeText(
-                        baseContext, "Authentication est echoué,ressayez.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
+                    Toast.makeText(baseContext, "Authentication est echoué,ressayez.",
+                        Toast.LENGTH_SHORT).show()
                 }
-
-                // ...
             }
     }
 }

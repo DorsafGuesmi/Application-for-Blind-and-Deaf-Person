@@ -41,8 +41,8 @@ class authentification_sourd : AppCompatActivity() {
             login.requestFocus()
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(login.toString()).matches()) {
-            login.error = "entrez une adresse email valide s'il vous plait"
+        if (!Patterns.EMAIL_ADDRESS.matcher(login.text.toString()).matches()) {
+            login.error = "Please enter valid email"
             login.requestFocus()
             return
         }
@@ -51,20 +51,14 @@ class authentification_sourd : AppCompatActivity() {
             passe.requestFocus()
             return
         }
-        auth.createUserWithEmailAndPassword(passe.text.toString(),login.text.toString())
+        auth.signInWithEmailAndPassword(login.text.toString(), passe.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
-
-
                     updateUI(null)
                 }
-
-                // ...
             }
     }
 
@@ -77,18 +71,19 @@ class authentification_sourd : AppCompatActivity() {
 
     private fun updateUI(currentUser: FirebaseUser?) {
 
-    if (currentUser!=null){
-        if(currentUser.isEmailVerified){
-        startActivity(Intent(this,Dashboard::class.java))
-    }else{
-            Toast.makeText(baseContext, "Vérifiez votre adresse email s'il vous plait ",
+        if (currentUser != null){
+            if (currentUser.isEmailVerified) {
+                startActivity(Intent(this, Dashboard::class.java))
+                finish()
+            } else{
+                Toast.makeText(baseContext, "Vérifiez votre adresse email s'il vous plait.",
+                    Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(baseContext, "Échec de la connexion.",
                 Toast.LENGTH_SHORT).show()
         }
-    }
-        else{
-        Toast.makeText(baseContext, "Vérifiez votre mot de passe s'il vous plait",
-            Toast.LENGTH_SHORT).show()
-    }
+
 
     }
 

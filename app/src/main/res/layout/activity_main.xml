@@ -10,14 +10,14 @@
     <ImageButton
         android:id="@+id/aveugle"
         android:layout_width="match_parent"
-        android:layout_height="339dp"
+        android:layout_height="365dp"
        android:background="@drawable/hide"
         android:onClick="aveuglee"/>
 
     <ImageButton
         android:id="@+id/sourd"
         android:layout_width="match_parent"
-        android:layout_height="392dp"
+        android:layout_height="365dp"
         android:background="@drawable/deaf"
         android:onClick="sourdd"/>
 
