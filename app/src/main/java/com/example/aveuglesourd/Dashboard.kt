@@ -27,7 +27,9 @@ class Dashboard : AppCompatActivity() {
         startActivity(Intent(this,Main2Activity::class.java))
     }
 
-    fun consultergeste(view: View) {}
+    fun chat(view: View) {
+       // startActivity(Intent(this,chatTutorial::class.java))
+    }
 
 
 }

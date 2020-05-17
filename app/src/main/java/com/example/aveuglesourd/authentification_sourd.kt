@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser
 
 
 import kotlinx.android.synthetic.main.activity_authentification_sourd.*
-import kotlinx.android.synthetic.main.activity_authentification_sourd.button
+
 
 
 class authentification_sourd : AppCompatActivity() {
@@ -25,11 +25,11 @@ class authentification_sourd : AppCompatActivity() {
         setContentView(R.layout.activity_authentification_sourd)
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
-        button1.setOnClickListener {
+       creer.setOnClickListener {
             startActivity(Intent(this, creercompte::class.java))
             finish()
         }
-        button.setOnClickListener {
+      cnx.setOnClickListener {
             doLing()
         }
 

@@ -1,5 +1,6 @@
 package com.example.aveuglesourd
 
+
 class Upload {
     var imgName: String? = null
     var imgUrl: String? = null

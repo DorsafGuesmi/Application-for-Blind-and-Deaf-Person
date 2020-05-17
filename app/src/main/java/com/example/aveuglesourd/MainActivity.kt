@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun chooseImage(view: View) {}
 
 
 }

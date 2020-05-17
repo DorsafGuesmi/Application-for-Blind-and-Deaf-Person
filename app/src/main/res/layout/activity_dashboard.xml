@@ -80,6 +80,7 @@
             android:padding="16dp">
 
             <ImageButton
+                android:onClick="chat"
                 android:id="@+id/chat"
                 android:layout_width="68dp"
                 android:layout_height="80dp"
