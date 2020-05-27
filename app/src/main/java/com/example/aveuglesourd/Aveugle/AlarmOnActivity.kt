@@ -28,13 +28,15 @@ class AlarmOnActivity : AppCompatActivity() {
             }
         })
 
-        val tvMedicament = findViewById<TextView>(R.id.tvM)
 
         var intent = intent
         val Nom = intent.getStringExtra("Nom")
+        var text: String = ""
+        text+= "C'est le temp de votre médicament : $Nom\n"
 
-        tvMedicament.setText("C'est le temp de votre médicament : "+Nom)
-
+        tvM.text = text
+        val toSpeak = tvM.text.toString()
+        mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
         var mp = MediaPlayer.create(applicationContext, R.raw.alarm_clock_2015_new)
         mp.start()
 
@@ -47,6 +49,7 @@ class AlarmOnActivity : AppCompatActivity() {
                     mTTS.speak("double click on this button to stop alarm", TextToSpeech.QUEUE_FLUSH, null)
                 } else if (i == 2) {
                     mp.stop()
+                    finish()
                 }
                 i = 0
             }, 500)

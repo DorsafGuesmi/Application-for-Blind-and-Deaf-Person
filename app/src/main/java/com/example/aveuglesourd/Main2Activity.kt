@@ -3,21 +3,19 @@ package com.example.aveuglesourd
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.*
 import androidx.annotation.Nullable
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.squareup.picasso.Picasso
-
 
 class Main2Activity : AppCompatActivity() {
     private var chooseImage: Button? = null
@@ -33,7 +31,6 @@ class Main2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-
         uploadProgress = findViewById(R.id.uploadProgress)
         chooseImage = findViewById(R.id.chooseImage)
         btnUploadImage = findViewById(R.id.btnUploadImage)
@@ -42,6 +39,8 @@ class Main2Activity : AppCompatActivity() {
         imgPreview = findViewById(R.id.imgPreview)
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads")
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads")
+
+
 
     }
     fun viewGallery(view: View) {val intent = Intent(this@Main2Activity, ViewImageActivity::class.java)

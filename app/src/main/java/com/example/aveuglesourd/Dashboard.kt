@@ -31,7 +31,7 @@ class Dashboard : AppCompatActivity() {
     }
 
     fun notiy(view: View) {
-        startActivity(Intent(this, RappelActivity::class.java))
+        startActivity(Intent(this, RappelActivitySourd::class.java))
     }
 
 

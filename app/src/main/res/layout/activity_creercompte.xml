@@ -34,10 +34,8 @@
         android:background="@drawable/corner"
         android:inputType="textPersonName"
         android:hint="Entrer le nom"
-        android:textSize="12sp"
-
-
-
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FA8072"/>
     <TextView
         android:id="@+id/textView4"
@@ -64,7 +62,8 @@
         android:ems="10"
         android:hint=" Entrer l'email"
         android:background="@drawable/corner"
-        android:textSize="12sp"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
         android:inputType="textEmailAddress"
 
 
@@ -93,7 +92,8 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Entrer le mot de passe"
-        android:textSize="12sp"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
         android:inputType="textEmailAddress"
         android:background="@drawable/corner"
         android:textColorHint="#FA8072" />

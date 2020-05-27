@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Aveugle.AlarmOnActivity"></activity>
+        <activity android:name=".AlarmOnActivitySourd"></activity>
+        <activity android:name=".RappelActivitySourd" />
+        <activity android:name=".Aveugle.AlarmOnActivity" />
         <activity android:name=".splashapplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,6 +70,7 @@
         </service>
 
         <receiver android:name=".Aveugle.AlarmReceiver" />
+        <receiver android:name=".AlarmReceiverSourd" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
