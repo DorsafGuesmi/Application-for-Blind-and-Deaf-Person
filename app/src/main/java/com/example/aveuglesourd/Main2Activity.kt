@@ -33,6 +33,7 @@ class Main2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
         uploadProgress = findViewById(R.id.uploadProgress)
         chooseImage = findViewById(R.id.chooseImage)
         btnUploadImage = findViewById(R.id.btnUploadImage)
@@ -41,8 +42,6 @@ class Main2Activity : AppCompatActivity() {
         imgPreview = findViewById(R.id.imgPreview)
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads")
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads")
-
-
 
     }
     fun viewGallery(view: View) {val intent = Intent(this@Main2Activity, ViewImageActivity::class.java)

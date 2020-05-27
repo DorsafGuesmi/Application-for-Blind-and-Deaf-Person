@@ -15,4 +15,6 @@ class Upload {
         this.imgUrl = imgUrl
     }
 
+    constructor(){}
+
 }

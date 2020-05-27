@@ -109,7 +109,8 @@
                 android:id="@+id/notif"
                 android:layout_width="68dp"
                 android:layout_height="80dp"
-                android:background="@drawable/hhjjk" />
+                android:background="@drawable/hhjjk"
+                android:onClick="notiy"/>
 
             <TextView
                 android:layout_width="wrap_content"

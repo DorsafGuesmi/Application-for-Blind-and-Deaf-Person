@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.speech.tts.TextToSpeech
 import android.widget.Button
@@ -29,6 +30,7 @@ class GalleryActivity : AppCompatActivity() {
     lateinit var btGallery: Button
     lateinit var imageViewGallery: ImageView
     lateinit var mTTS: TextToSpeech
+    private var i = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,18 +41,29 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        btGallery = findViewById(R.id.btGallery)
-        imageViewGallery = findViewById(R.id.image_View_Gallery)
-        btGallery.setOnClickListener {
-            onClick()
-        }
-
         mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
             if (status != TextToSpeech.ERROR) {
                 //if there is no error then set language
                 mTTS.language = Locale.UK
             }
         })
+
+        btGallery = findViewById(R.id.btGallery)
+        imageViewGallery = findViewById(R.id.image_View_Gallery)
+        btGallery.setOnClickListener {
+            i++
+
+            val handler = Handler()
+            handler.postDelayed({
+                if (i == 1) {
+                    mTTS.speak("double click on this button to open gallery", TextToSpeech.QUEUE_FLUSH, null)
+                } else if (i == 2) {
+                    onClick()
+                }
+                i = 0
+            }, 500)
+        }
+
     }
 
     private fun onClick() {

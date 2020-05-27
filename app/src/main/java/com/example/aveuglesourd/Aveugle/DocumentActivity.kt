@@ -14,6 +14,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.provider.MediaStore
 import android.speech.tts.TextToSpeech
 import android.widget.Button
@@ -40,6 +41,7 @@ class DocumentActivity : AppCompatActivity() {
     val PERMISSION_REQ_CODE: Int = 100
     lateinit var path: String
     lateinit var mTTS: TextToSpeech
+    private var i = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,17 +50,27 @@ class DocumentActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        btCam = findViewById(R.id.btCam)
-        imgView = findViewById(R.id.image_View)
-        btCam.setOnClickListener {
-            onClick()
-        }
         mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
             if (status != TextToSpeech.ERROR) {
                 //if there is no error then set language
                 mTTS.language = Locale.UK
             }
         })
+        btCam = findViewById(R.id.btCam)
+        imgView = findViewById(R.id.image_View)
+        btCam.setOnClickListener {
+            i++
+
+            val handler = Handler()
+            handler.postDelayed({
+                if (i == 1) {
+                    mTTS.speak("double click on this button to open camera", TextToSpeech.QUEUE_FLUSH, null)
+                } else if (i == 2) {
+                    onClick()
+                }
+                i = 0
+            }, 500)
+        }
     }
 
     fun onClick() {

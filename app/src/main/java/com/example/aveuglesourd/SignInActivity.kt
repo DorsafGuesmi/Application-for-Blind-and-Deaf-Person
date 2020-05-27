@@ -54,7 +54,7 @@ class SignInActivity : AppCompatActivity() {
 //initialisation de user ceer une data classe(classe contient les données de user) dans package dans model
                 FirestoreUtil.initCurrentUserIfFirstTime {
                     // on peut revenir au connexion aprés que vous aver terminer
-                    startActivity(intentFor<MainActivity>().newTask().clearTask())
+                    startActivity(intentFor<communication>().newTask().clearTask())
 
                     val registrationToken = FirebaseInstanceId.getInstance().token
                     MyFirebaseInstanceIDService.addTokenToFirestore(registrationToken)

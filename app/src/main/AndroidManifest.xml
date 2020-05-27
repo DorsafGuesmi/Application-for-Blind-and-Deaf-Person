@@ -15,52 +15,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".Main2Activity"/>
-        <activity android:name=".ViewImageActivity" />
-
-
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
+        <activity android:name=".Aveugle.AlarmOnActivity"></activity>
+        <activity android:name=".splashapplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".ViewImageActivity" />
         <activity
             android:name=".SignInActivity"
             android:label="chat" />
         <activity
             android:name=".communication"
             android:label="@string/title_activity_communication" />
-
-        <activity android:name=".Aveugle.DashboardAveugle"></activity>
+        <activity android:name=".Aveugle.DashboardAveugle" />
         <activity android:name=".Aveugle.GalleryActivity" />
         <activity android:name=".Aveugle.LabelActivity" />
         <activity android:name=".Aveugle.RappelActivity" />
         <activity android:name=".Aveugle.DocumentActivity" />
-
-
+        <activity android:name=".Aveugle.splashaveugle" />
         <activity android:name=".creercompte" />
         <activity android:name=".SpeechtoText" />
         <activity android:name=".gerer_compte" />
         <activity android:name=".authentification_sourd" />
-        <activity android:name=".Aveugle.splashaveugle" />
         <activity android:name=".splashsourd" />
         <activity android:name=".MainActivity" />
-
-
+        <activity android:name=".Dashboard" />
         <activity
-            android:name=".splashapplication"
-            android:label="splashapp" />
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme" />
         <activity android:name=".ChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".communication" />
-        </activity>
-        <!-- FCM -->
+        </activity> <!-- FCM -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_foreground" />
@@ -69,7 +60,6 @@
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-
         </service>
         <service android:name=".service.MyFirebaseInstanceIDService">
             <intent-filter>
@@ -77,13 +67,7 @@
             </intent-filter>
         </service>
 
-
-
         <receiver android:name=".Aveugle.AlarmReceiver" />
-
-        <service
-            android:name=".Aveugle.RingtoneService"
-            android:enabled="true" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
@@ -98,7 +82,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

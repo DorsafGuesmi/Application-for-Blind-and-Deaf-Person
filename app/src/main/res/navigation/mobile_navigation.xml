@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-
-
-
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,14 +8,12 @@
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.example.aveuglesourd.ui.home.HomeFragment"
         android:label="account"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_my_account" />
 
     <fragment
         android:id="@+id/navigation_amis"
-        android:name="com.example.aveuglesourd.ui.dashboard.DashboardFragment"
         android:label="amies"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_people" />
 
 </navigation>

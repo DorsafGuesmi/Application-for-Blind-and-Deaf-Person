@@ -6,8 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import android.view.View
-
-
+import com.example.aveuglesourd.Aveugle.RappelActivity
 
 
 class Dashboard : AppCompatActivity() {
@@ -28,7 +27,11 @@ class Dashboard : AppCompatActivity() {
     }
 
     fun chat(view: View) {
-       // startActivity(Intent(this,chatTutorial::class.java))
+        startActivity(Intent(this,SignInActivity::class.java))
+    }
+
+    fun notiy(view: View) {
+        startActivity(Intent(this, RappelActivity::class.java))
     }
 
 

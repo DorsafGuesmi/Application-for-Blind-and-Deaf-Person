@@ -11,6 +11,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.provider.MediaStore
 import android.speech.tts.TextToSpeech
 import android.util.Log
@@ -36,6 +37,7 @@ class LabelActivity : AppCompatActivity() {
     val PERMISSION_REQ_CODE: Int = 100
     lateinit var path: String
     lateinit var mTTS: TextToSpeech
+    private var i = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,17 +46,27 @@ class LabelActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        btCam = findViewById(R.id.btCamLabel)
-        imgView = findViewById(R.id.image_View_Label)
-        btCam.setOnClickListener {
-            onClick()
-        }
         mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
             if (status != TextToSpeech.ERROR) {
                 //if there is no error then set language
                 mTTS.language = Locale.UK
             }
         })
+        btCam = findViewById(R.id.btCamLabel)
+        imgView = findViewById(R.id.image_View_Label)
+        btCam.setOnClickListener {
+            i++
+
+            val handler = Handler()
+            handler.postDelayed({
+                if (i == 1) {
+                    mTTS.speak("double click on this button to open camera", TextToSpeech.QUEUE_FLUSH, null)
+                } else if (i == 2) {
+                    onClick()
+                }
+                i = 0
+            }, 500)
+        }
     }
 
     fun onClick() {
@@ -146,7 +158,7 @@ class LabelActivity : AppCompatActivity() {
 
     private fun processLabels(labels: List<FirebaseVisionLabel>) {
         val lbl = labels.firstOrNull()
-        var msg = lbl?.label + "," + lbl?.confidence
+        var msg = lbl?.label + " , " + lbl?.confidence
         updateLabel(msg)
         for (label in labels){
             val text = label.label
@@ -159,6 +171,7 @@ class LabelActivity : AppCompatActivity() {
 
     private fun updateLabel(message: String) {
         this.tvOutputLabel.text = message
+        textToSpeech(tvOutputLabel)
     }
 
     private fun textToSpeech(tvOutput: TextView) {

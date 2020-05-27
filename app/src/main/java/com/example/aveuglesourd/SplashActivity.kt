@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         if (FirebaseAuth.getInstance().currentUser == null)
             startActivity<SignInActivity>()
         else
-            startActivity<MainActivity>()
+            startActivity<communication>()
         finish()
     }
 }
