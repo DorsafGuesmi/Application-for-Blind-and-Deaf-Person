@@ -94,7 +94,7 @@
                 android:id="@+id/btnChat"
                 android:layout_width="68dp"
                 android:layout_height="70dp"
-                android:background="@drawable/message"/>
+                android:background="@drawable/speech"/>
 
             <TextView
                 android:layout_width="wrap_content"

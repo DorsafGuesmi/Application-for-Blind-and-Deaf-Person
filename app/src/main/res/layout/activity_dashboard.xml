@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,6 +17,15 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="20dp">
+        <ImageButton
+            android:onClick="deconnexion"
+            android:id="@+id/deconxionn"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/powerr" />
+
+
 
         <TextView
             android:id="@+id/menu"
@@ -24,14 +33,16 @@
             android:layout_height="wrap_content"
             android:text="Menu"
             android:textColor="#008080"
-            android:textSize="30sp" />
+            android:textSize="50sp"
+            android:layout_centerHorizontal="true"/>
 
         <ImageButton
             android:id="@+id/user"
             android:layout_width="62dp"
             android:layout_height="62dp"
-            android:layout_alignParentRight="true"
-           android:background="@drawable/user" />
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/user" />
+
 
 
 
@@ -43,11 +54,14 @@
         android:alignmentMode="alignMargins"
         android:columnCount="1"
         android:columnOrderPreserved="false"
-        android:rowCount="2">
+        android:rowCount="6">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="193dp"
+            android:layout_row="0"
+            android:layout_column="0"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="16dp">
@@ -56,9 +70,9 @@
                 android:id="@+id/geste"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:onClick="ajout"
+                android:background="@drawable/deaffffff"
 
-                android:background="@drawable/deaffffff" />
+                android:onClick="ajout" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,8 +83,6 @@
                 android:textColor="#0000FF"
                 android:textSize="18sp" />
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,7 +96,7 @@
                 android:id="@+id/chat"
                 android:layout_width="68dp"
                 android:layout_height="80dp"
-                android:background="@drawable/message" />
+                android:background="@drawable/speech" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -146,6 +158,56 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/texttospeech"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:background="@drawable/speechtotext"
+                android:onClick="texttospeech"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="text au discours"
+                android:textColor="#0000FF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/math"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:background="@drawable/math"
+                android:onClick="jouer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+                android:text="Jouer"
+                android:textColor="#0000FF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
 
 
 

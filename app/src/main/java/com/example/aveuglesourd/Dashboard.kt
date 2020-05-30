@@ -34,5 +34,14 @@ class Dashboard : AppCompatActivity() {
         startActivity(Intent(this, RappelActivitySourd::class.java))
     }
 
+    fun texttospeech(view: View) {
+
+    }
+    fun deconnexion(view: View) {
+
+    }
+
+    fun jouer(view: View) {}
+
 
 }
